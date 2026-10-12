@@ -1,0 +1,63 @@
+# University Rules Assistant — RAG Chatbot
+
+A Retrieval-Augmented Generation (RAG) chatbot that answers student questions using a university rules document.
+
+## Project Overview
+
+This project retrieves relevant university rules and uses a text-generation model to produce answers grounded in the retrieved context. It also displays the source rule and similarity score to help users inspect the response.
+
+## Technologies Used
+
+- Python
+- Google Colab
+- Sentence Transformers (`all-MiniLM-L6-v2`)
+- Scikit-learn
+- FLAN-T5 (`google/flan-t5-small`)
+- Gradio
+
+## How It Works
+
+1. Load the university rules document.
+2. Split the document into text chunks.
+3. Convert the chunks into vector embeddings.
+4. Retrieve the most relevant chunk using cosine similarity.
+5. Generate an answer using the retrieved context.
+6. Display the answer, source rule, and similarity score in a Gradio chat interface.
+
+## Features
+
+- Semantic search over university rules
+- Context-based answer generation
+- Source-rule display
+- Similarity score display
+- Rejection of questions with insufficient retrieval similarity
+- Interactive chatbot interface
+
+## Testing
+
+The chatbot was tested with questions about attendance requirements, student absence rules, identity-card policies, and unsupported hostel-fee information.
+
+## Limitations
+
+- Retrieves only the single best-matching chunk.
+- Similarity scores do not guarantee factual accuracy.
+- Generated answers may be incomplete or incorrect.
+- Intended as a learning prototype, not an official source of university guidance.
+
+## Run the Project
+
+1. Open the notebook included in this repository using Google Colab.
+2. Run the setup and model-loading cells.
+3. Run the remaining cells in order.
+4. Open the Gradio interface and ask questions about the included rules document.
+
+## Future Improvements
+
+- Improve chunking and retrieval.
+- Add more university documents.
+- Evaluate retrieval and answer quality with more test cases.
+- Explore hybrid search and stronger answer validation.
+
+## Author
+
+AI/ML learner building practical projects in Python and Generative AI.
